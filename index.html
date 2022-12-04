@@ -58,7 +58,7 @@
   const userName = document.getElementById("ajaxTextbox").value;
   makeRequest('test.php', userName);
 
-  function makeRequest() {
+  function makeRequest(url, userName) {
         httpRequest = new XMLHttpRequest();
 
         if (!httpRequest) {
