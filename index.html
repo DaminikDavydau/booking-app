@@ -52,6 +52,24 @@
   </span>
   
   <script type="text/javascript">
+  fetch('./books.json', {
+    method : "POST",
+    //body: new FormData(document.getElementById("inputform")),
+    // -- or --
+    body: JSON.stringify({text : document.getElementById("ajaxTextbox").value
+        // user : document.getElementById('user').value,
+    
+    })
+}) //path to the file with json data
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            console.log(data)
+        });
+  </script>
+  <!--
+  <script type="text/javascript">
     const xhr = new XMLHttpRequest();
 xhr.open("POST", 'text.html', true);
 
