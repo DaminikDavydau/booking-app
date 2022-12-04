@@ -52,11 +52,16 @@
   </span>
   
   <script type="text/javascript">
+    document.getElementById("ajaxButton").onclick = () => {
+  const userName = document.getElementById("ajaxTextbox").value;
+  makeRequest('text.html', userName);
+
+  function makeRequest(url, userName) {
   fetch('./books.json', {
     method : "POST",
     //body: new FormData(document.getElementById("inputform")),
     // -- or --
-    body: JSON.stringify({text : document.getElementById("ajaxTextbox").value
+    body: JSON.stringify({text : userName,
         // user : document.getElementById('user').value,
     
     })
@@ -67,6 +72,7 @@
         .then(data => {
             console.log(data)
         });
+  }
   </script>
   <!--
   <script type="text/javascript">
