@@ -45,7 +45,7 @@
 
 -->
   <label>Your name:
-    <input type="text" id="ajaxTextbox" />
+    <input type="text" id="ajaxTextbox" value="congratulations">
   </label>
   <span id="ajaxButton" style="cursor: pointer; text-decoration: underline">
     Make a request
@@ -91,7 +91,7 @@ xhr.onreadystatechange = () => { // Call a function when the state changes.
   }
 }
 
-xhr.send(body: JSON.stringify({text : userName,
+xhr.send(JSON.stringify({text : document.getElementById("ajaxTextbox").value,
     }));
     
     xhr.onreadystatechange = () => { // Call a function when the state changes.
