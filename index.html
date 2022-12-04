@@ -50,7 +50,7 @@
   <span id="ajaxButton" style="cursor: pointer; text-decoration: underline">
     Make a request
   </span>
-  
+  <!--
   <script type="text/javascript">
     document.getElementById("ajaxButton").onclick = () => {
   const userName = document.getElementById("ajaxTextbox").value;
@@ -73,14 +73,16 @@
             console.log(data)
         });
   }}
+
+-->
   </script>
-  <!--
+  
   <script type="text/javascript">
     const xhr = new XMLHttpRequest();
-xhr.open("POST", 'text.html', true);
+xhr.open("POST", 'books.json', true);
 
 //Send the proper header information along with the request
-xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xhr.setRequestHeader("Content-Type", "application/json; charset = UTF-8");
 
 xhr.onreadystatechange = () => { // Call a function when the state changes.
   if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
