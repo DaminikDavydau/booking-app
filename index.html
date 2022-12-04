@@ -91,7 +91,8 @@ xhr.onreadystatechange = () => { // Call a function when the state changes.
   }
 }
 
-xhr.send("foo=bar&lorem=ipsum");
+xhr.send(body: JSON.stringify({text : userName,
+    }));
     
     xhr.onreadystatechange = () => { // Call a function when the state changes.
   if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
