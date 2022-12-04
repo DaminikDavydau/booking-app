@@ -56,7 +56,7 @@
 
   document.getElementById("ajaxButton").onclick = () => {
   const userName = document.getElementById("ajaxTextbox").value;
-  makeRequest('test.php', userName);
+  makeRequest('text.html', userName);
 
   function makeRequest(url, userName) {
         httpRequest = new XMLHttpRequest();
@@ -70,8 +70,17 @@
         httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         httpRequest.send(`userName=${encodeURIComponent(userName)}`);
       }
-
-      function alertContents() {
+    function alertContents() {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+          if (httpRequest.status === 200) {
+            alert(httpRequest.responseText);
+          } else {
+            alert("There was a problem with the request.");
+          }
+        }
+      }
+      <!--
+    function alertContents() {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
           if (httpRequest.status === 200) {
             const response = JSON.parse(httpRequest.responseText);
@@ -81,7 +90,7 @@
           }
         }
       }
-
+      -->
 };
 
 </script>
